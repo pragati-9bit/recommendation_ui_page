@@ -1,0 +1,176 @@
+<mvc:View
+	controllerName="com.myorg.myapp.controller.Main"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	core:require="{
+		formatter: 'com/myorg/myapp/model/formatter'
+	}">
+
+	
+  <!-- <Page title="User Preferences">
+    <content>
+        <mvc:XMLView viewName="com.myorg.myapp.view.UserPref" />
+    </content>
+</Page>
+<Page title="Movies List">
+    <content>
+        <mvc:XMLView viewName="com.myorg.myapp.view.MoviesList" /> 
+    </content>
+</Page> -->
+
+
+</mvc:View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <mvc:View
+	controllerName="com.myorg.myapp.controller.Main"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	core:require="{
+		formatter: 'com/myorg/myapp/model/formatter'
+	}">
+
+	<Page
+		title="{i18n>appTitle}"
+     id="page"
+     horizontalAlign="Center"
+		>
+    
+		<content >
+ <FlexBox justifyContent="Center" alignItems="Center" height="100%">
+  <VBox width="60%">
+			<Input value="{/userName}" placeholder="Enter your name" />
+
+		 <HBox height="2rem"/>
+	
+			<!-- First Section: Genres -->
+          <Panel headerText="{i18n>headerText}">
+          
+            <content>
+	
+          <Select id="genreSelect" forceSelection="false" change="onGenreSelectionChange">
+            <core:ListItem key="Action" text="Action" />
+            <core:ListItem key="Comedy" text="Comedy" />
+            <core:ListItem key="Drama" text="Drama" />
+          </Select>
+         
+		    <Button text="+" press="onAddGenrePress" style="margin-left: 5rem;"/>
+ 
+              <Table id="genreTable" mode="SingleSelectLeft" items="{/genres}">
+                <columns>
+                  <Column>
+                    <Text text="{i18n>textGenre}" />
+                  </Column>
+                  <Column>
+                    <Text text="{i18n>textRating}" />
+                  </Column>
+                </columns>
+                <items>
+                  <ColumnListItem>
+                    <cells>
+                      <Text text="{genre}" />
+                      <RatingIndicator value="{rating}" maxValue="5" />
+                    </cells>
+                  </ColumnListItem>
+                </items>
+              </Table>
+             
+            </content>
+          </Panel>
+           <HBox height="2rem"/>
+		  <!-- Second Section: Actors -->
+          <Panel headerText="Actors">
+            <content>
+		
+               <Select id="actorSelect" forceSelection="false">
+               <core:ListItem key="Actor1" text="Actor 1" />
+               <core:ListItem key="Actor2" text="Actor 2" />
+               <core:ListItem key="Actor3" text="Actor 3" />
+ 
+             </Select>
+               <Button text="+" press="onAddActorPress" />
+
+
+              <Table id="actorTable" mode="SingleSelectLeft" items="{/actors}">
+                <columns>
+                  <Column>
+                    <Text text="Actor" />
+                  </Column>
+                  <Column>
+                    <Text text="Rating" />
+                  </Column>
+                </columns>
+                <items>
+                  <ColumnListItem>
+                    <cells>
+                      <Text text="{actor}" />
+                      <RatingIndicator value="{rating}" maxValue="5" />
+                    </cells>
+                  </ColumnListItem>
+                </items>
+              </Table>
+               <Button  text="DisplayMovies" press=".onNavToMovies" class="sapUiTinyMarginEnd"/>
+            </content>
+          </Panel>
+	</VBox>
+      </FlexBox>
+     
+		</content>	
+    
+      <!-- <mvc:XMLView viewName="com.myorg.myapp.view.UserPref" />
+      <mvc:XMLView viewName="com.myorg.myapp.view.MoviesList" /> -->
+	</Page>
+
+</mvc:View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <IllustratedMessage
+				title="{i18n>appTitle}"
+				illustrationType="sapIllus-SuccessHighFive"
+				enableVerticalResponsiveness="true"
+				description="{i18n>appDescription}">
+				<additionalContent>
+					<Button
+						id="helloButton"
+						text="{formatter: 'formatter.formatValue', path: 'i18n>btnText'}"
+						press="sayHello" />
+				</additionalContent>
+			</IllustratedMessage> --> -->

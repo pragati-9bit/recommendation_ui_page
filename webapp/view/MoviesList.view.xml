@@ -1,0 +1,19 @@
+<!-- Movies.view.xml -->
+<mvc:View
+    controllerName="com.myorg.myapp.controller.MoviesList"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	core:require="{
+		formatter: 'com/myorg/myapp/model/formatter'
+	}">
+    <Page title="Movies-List">
+        <!-- <Text text="W Movie"/> -->
+		<content>
+         <!-- <Button text="movies"/> -->
+		 <Button  text="Movies" press=".sayHello" class="sapUiTinyMarginEnd"/>
+		 
+      </content>
+	  </Page>
+</mvc:View>
