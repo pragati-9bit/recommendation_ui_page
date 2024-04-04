@@ -17,12 +17,27 @@
 		<content >
  <FlexBox justifyContent="Center" alignItems="Center" height="100%">
   <VBox width="60%">
-			<Input value="{/userEmail}" placeholder="Enter your Email" />
+  <!-- <Table id="genreTable" mode="SingleSelectLeft" items="{entity>/value}">
+<Input value="{entity/userEmail}" placeholder="Enter your Email" />
+  </Table> -->
+			<!-- <Input value="{/userEmail}" placeholder="Enter your Email" /> -->
 
 		 <HBox height="2rem"/>
+      <Table >
+                <columns>
+                  <Column>
+                     <Text text="{entity>email}" />
+                  </Column>
+                </columns>
+                 <items>
+                  <ColumnListItem>
+                 <Input value="{entity>/userEmail}" placeholder="Enter your Email" />
+                </ColumnListItem>
+                </items>
+  </Table>
 	
 			<!-- First Section: Genres -->
-          <Panel headerText="{i18n>headerText}">
+          <Panel  headerText="{i18n>headerTextGenres}">
           
             <content>
 	
@@ -34,20 +49,20 @@
          
 		    <Button text="+" press="onAddGenrePress" style="margin-left: 5rem;"/>
  
-              <Table id="genreTable" mode="SingleSelectLeft" items="{/genres}">
+              <Table id="genreTable"  items="{entity>/genres}">
                 <columns>
                   <Column>
                     <Text text="{i18n>textGenre}" />
                   </Column>
                   <Column>
-                    <Text text="{i18n>textRating}" />
+                    <Text text="{i18n>textGenreRating}" />
                   </Column>
                 </columns>
                 <items>
                   <ColumnListItem>
                     <cells>
-                      <Text text="{genre}" />
-                      <RatingIndicator value="{rating}" maxValue="5" />
+                      <Text text="{entity>genre}" />
+                      <RatingIndicator value="{entity>rating}" maxValue="5" />
                     </cells>
                   </ColumnListItem>
                 </items>
@@ -57,10 +72,10 @@
           </Panel>
            <HBox height="2rem"/>
 		  <!-- Second Section: Actors -->
-          <Panel headerText="Actors">
+          <Panel headerText="{i18n>headerTextActors}">
             <content>
 		
-               <Select id="actorSelect" forceSelection="false">
+               <Select id="actorSelect" forceSelection="false" >
                <core:ListItem key="Actor1" text="Actor 1" />
                <core:ListItem key="Actor2" text="Actor 2" />
                <core:ListItem key="Actor3" text="Actor 3" />
@@ -69,27 +84,29 @@
                <Button text="+" press="onAddActorPress" />
 
 
-              <Table id="actorTable" mode="SingleSelectLeft" items="{/actors}">
+              <Table id="actorTable"  items="{entity>/actors}">
                 <columns>
                   <Column>
-                    <Text text="Actor" />
+                    <Text text="{i18n>textActor}" />
                   </Column>
                   <Column>
-                    <Text text="Rating" />
+                    <Text text="{i18n>textActorRating}" />
                   </Column>
                 </columns>
                 <items>
                   <ColumnListItem>
                     <cells>
-                      <Text text="{actor}" />
-                      <RatingIndicator value="{rating}" maxValue="5" />
+                      <Text text="{entity>actor}" />
+                      <RatingIndicator value="{entity>rating}" maxValue="5" />
                     </cells>
                   </ColumnListItem>
                 </items>
               </Table>
                <!-- <Button  text="DisplayMovies" press=".onDisplayMoviesList" class="sapUiTinyMarginEnd"/> -->
-               <Button text="Submit" press="onSubmit"/>
-               <Button text="Edit" press="onEditGenrePress"/>
+               <!-- <Button text="Submit" press="onSubmit"/> -->
+               <Button id="submitButton" text="Create" press="onSubmit"/>
+
+               <!-- <Button text="Edit" press="updatePreferences"/> -->
                
                
 
@@ -102,6 +119,9 @@
     
       <!-- <mvc:XMLView viewName="com.myorg.myapp.view.UserPref" />
       <mvc:XMLView viewName="com.myorg.myapp.view.MoviesList" /> -->
+
+    
+
 	</Page>
 
 </mvc:View>
